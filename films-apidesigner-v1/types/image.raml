@@ -1,0 +1,32 @@
+#%RAML 1.0 Library
+uses:
+  
+types:
+  image:
+    type: object    
+    properties:
+      imageId:
+        type: string
+        required: false
+        description: |
+          Unique image identifier.
+      imageName:
+        type: string
+        required: false
+        description: |
+          Unique image identifier.   
+      url:
+        type: string
+        required: false
+        description: |
+          URL where image can be queried.  
+      content:
+        type: string
+        required: false
+        description: |
+          base64 image content 
+      size:
+        type: string
+        required: false
+        description: |
+          image size 

@@ -1,0 +1,18 @@
+#%RAML 1.0 Library
+uses:
+  
+types:
+  genre:
+    type: object    
+    properties:
+      genreId:
+        type: string
+        required: false
+        description: |
+          Unique director identifier.   
+        enum: ["Sci-Fi","Action","Adventure","Fantasy","Thriller","Crime", "Drama"]
+      description:
+        type: string
+        required: false
+        description: |
+          Genre description. 

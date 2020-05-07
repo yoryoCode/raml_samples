@@ -1,0 +1,19 @@
+#%RAML 1.0 Library
+uses:
+  persons: persons.raml
+
+types:
+  directors:
+    type: persons.persons
+    items:
+      properties:
+        directorId:
+          type: string
+          required: false
+          description: |
+            Unique director identifier. 
+        directorIntro:
+          type: string
+          required: false
+          description: |
+            director intro text.  

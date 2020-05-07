@@ -1,0 +1,96 @@
+{
+  "data": {
+    "filmId": "67490436a8be5153fe7d8bc54344fa1e",
+    "name": "The Lord of the Rings: The Return of King",
+    "duration": "3h 21m",
+    "principalCast": [
+      {
+        "name": "Elijah",
+        "lastName": "Wood",
+        "actorId": "60490436a8be5153fe7d8bc54344fa78"
+      },
+      {
+        "name": "Viggo",
+        "lastName": "Mortensen",
+        "actorId": "60390426a8be8153fe7d8bc54344fa7e"
+      }
+    ],
+    "genres": [
+      {
+        "genreId": "Adventure",
+        "description": "Adventure"
+      },
+      {
+        "genreId": "Drama",
+        "description": "Drama"
+      },
+      {
+        "genreId": "Fantasy",
+        "description": "Fantasy"
+      }
+    ],
+    "images": [
+      {
+        "imageId": "60390426a8be8153fe7d8bc54344fa7e",
+        "imageName": "small",
+        "url": "images/igaj_2x_20.jpg",
+        "size": "20 x 15"
+      }
+    ],
+    "actors": [
+      {
+        "name": "Elijah",
+        "lastName": "Wood",
+        "actorId": "60490436a8be5153fe7d8bc54344fa78"
+      },
+      {
+        "name": "Viggo",
+        "lastName": "Mortensen",
+        "actorId": "60390426a8be8153fe7d8bc54344fa7e"
+      },
+      {
+        "name": "Cate",
+        "lastName": "Blanchett",
+        "actorId": "60090426a8be8153fe7d8bc54344f45t"
+      },
+      {
+        "name": "Orlando",
+        "lastName": "Bloom",
+        "actorId": "20090426a8be8153fe0d8bc54344f7yy"
+      }
+    ],
+    "directors": [
+      {
+        "directorId": "20000426a5be8153fe0d8bc54564f7yy",
+        "secondLastName": "",
+        "name": "Peter",
+        "lastName": "Jackson"
+      }
+    ],
+    "characters": [
+      {
+        "characterId": "20000426a5be8153fe0d8bc54564f7bb",
+        "characterName": "Legolas",
+        "actor": {
+          "actorId": "20090426a8be8153fe0d8bc54344f7yy"
+        }
+      },
+      {
+        "characterId": "20000426a5be8153f66d8bc54564f766",
+        "characterName": "Frodo",
+        "actor": {
+          "actorId": "60490436a8be5153fe7d8bc54344fa78"
+        }
+      },
+      {
+        "characterId": "20000426a5be8153f66d8bc54564f444",
+        "characterName": "Galadriel",
+        "actor": {
+          "actorId": "60090426a8be8153fe7d8bc54344f45t"
+        }
+      }
+    ],
+    "year": 2003,
+    "rank": 8.9
+  }
+}

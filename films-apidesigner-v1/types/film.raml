@@ -1,0 +1,69 @@
+#%RAML 1.0 Library
+uses:
+  character: character.raml
+  actor: actor.raml
+  director: director.raml
+  genre: genre.raml
+  image: image.raml
+
+types:
+  film:
+    type: object
+    properties:
+      filmId:
+        type: string
+        required: false
+        description: |
+          Unique film identifier.
+      name:
+        type: string
+        required: false
+        description: |
+          Film name.
+      duration:
+        type: string
+        required: false
+        description: |
+          duration in minutes.
+      principalCast: 
+        type: actor.actor[]
+        required: false
+        description: |
+          film principal cast.
+      actors:  
+        type: actor.actor[]
+        required: false
+        description: |
+          film actors.  
+      directors:  
+        type: director.director[]
+        required: false
+        description: |
+          film directors.
+      characters:  
+        type: character.character[]
+        required: false
+        description: |
+          film characters. 
+      rank:
+        type: number
+        required: false
+        description: |
+          film rank level.
+      genres:
+        type: genre.genre[]
+        required: false
+        description: |
+          film genres.
+      images:
+          type: image.image[]
+          required: false
+          description: |
+            film genres.
+      year:
+          type: number
+          required: false
+          description: |
+            film release year.     
+
+        

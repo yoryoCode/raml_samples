@@ -1,0 +1,28 @@
+#%RAML 1.0 Library
+uses:
+  actor: actor.raml
+
+types:
+  character:
+    type: object
+    properties:
+      characterId:
+        type: string
+        required: false
+        description: |
+          Unique actor identifier.
+      characterName:
+        type: string
+        required: false
+        description: |
+          Character name. 
+      characterIntro:
+        type: string
+        required: false
+        description: |
+          Character description.
+      actor:
+        type: actor.actor
+        required: false
+        description: |
+          Perform actor.

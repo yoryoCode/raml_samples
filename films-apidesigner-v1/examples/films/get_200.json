@@ -1,0 +1,86 @@
+{
+  "data": [
+    {
+      "filmId": "67490436a8be5153fe7d8bc54344fa1e",
+      "name": "The Lord of the Rings: The Return of King",
+      "duration": "3h 21m",
+      "principalCast": [
+        {
+          "name": "Elijah",
+          "lastName": "Wood",
+          "actorId": "60490436a8be5153fe7d8bc54344fa78"
+        },
+        {
+          "name": "Viggo",
+          "lastName": "Mortensen",
+          "actorId": "60390426a8be8153fe7d8bc54344fa7e"
+        }
+      ],
+      "genres": [
+        {
+          "genreId": "Adventure",
+          "description": "Adventure"
+        },
+        {
+          "genreId": "Drama",
+          "description": "Drama"
+        },
+        {
+          "genreId": "Fantasy",
+          "description": "Fantasy"
+        }
+      ],
+      "images": [
+        {
+          "imageId": "60390426a8be8153fe7d8bc54344fa7e",
+          "imageName": "small",
+          "url": "images/igaj_2x_20.jpg",
+          "size": "20 x 15"
+        }
+      ],
+      "year": 2003,
+      "rank": 8.9
+    },
+    {
+      "filmId": "66490436a8be5153ae7d8bc54344fa17",
+      "name": "21 Grams",
+      "duration": "2h 4m",
+      "principalCast": [
+        {
+          "name": "Sean",
+          "lastName": "Penn",
+          "actorId": "65490436b8be5153fe7y8bc54344fa78"
+        },
+        {
+          "name": "Benicio",
+          "lastName": "Del Toro",
+          "actorId": "10390426a8be8153fe7d8bc54344fa7f"
+        }
+      ],
+      "genres": [
+        {
+          "genreId": "Crime",
+          "description": "Crime"
+        },
+        {
+          "genreId": "Drama",
+          "description": "Drama"
+        },
+        {
+          "genreId": "Thriller",
+          "description": "Thriller"
+        }
+      ],
+      "images": [
+        {
+          "imageId": "80390426a8be8153fe7d8bc54344fa8e",
+          "imageName": "small",
+          "url": "images/igfrj_2x_20.jpg",
+          "size": "20 x 15"
+        }
+      ],
+      "year": 2003,
+      "rank": 7.7
+    }
+  ]
+}

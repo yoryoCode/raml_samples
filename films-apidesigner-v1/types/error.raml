@@ -1,0 +1,23 @@
+#%RAML 1.0 Library
+usage:
+
+types:
+  error:
+    type: object    
+    properties:
+      code:
+        type: string
+        required: false
+        description: |
+          Unique error code.
+      description:
+        type: string
+        required: false
+        description: |
+          Error description.
+      type:
+        type: string
+        required: false
+        description: |
+          Error Type.   
+        enum: ["ERROR","FATAL","WARNING"]

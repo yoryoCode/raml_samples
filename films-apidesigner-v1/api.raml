@@ -1,0 +1,356 @@
+#%RAML 1.0
+title: FILMS
+version: v0.1.0
+baseUri: https://www.mysite.com/filmsapi/v0
+
+uses:
+  character: types/character.raml
+  films: types/films.raml
+  film: types/film.raml
+  image: types/image.raml
+  characters: types/characters.raml
+  directors: types/directors.raml
+  actors: types/actors.raml
+  error: types/error.raml
+  
+/films:
+  description: |
+    Manage Films
+
+  get:
+    description: |
+      Service for get films.
+
+    queryParameters:
+      year:
+        description: Filters the film by release year.
+        type: string
+        example: "2009"
+        required: false
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/films/get_200.json
+            type: object
+            properties:
+              data:
+                type: films.films
+                required: false
+      204:
+        description: Not Content
+      400:
+        body:
+          application/json:
+            type: object
+            properties:
+              message:
+                type: error.error
+                required: false
+        description: Bad Request
+      401:
+        description: Unauthorized
+      403:
+        description: Forbidden
+      500:
+        description: Server Error   
+  post:
+    description: |
+      Service to create a new Film.
+
+    body:
+      application/json:
+        example: !include examples/films/post_request.json
+        type: film.film
+    responses:
+      201:
+        description: Created
+        headers:
+          Location:
+            displayName: location
+            description: This header must provide the URI to reach the created resource.
+            type: string
+            required: true
+            example: "/films/1"
+        body:
+          application/json:
+            example: !include examples/films/post_201.json
+            type: object
+            properties:
+              data:
+                type: film.film
+      400:
+        body:
+          application/json:
+            type: object
+            properties:
+              message:
+                type: error.error
+                required: false
+        description: Bad Request
+      401:
+        description: Unauthorized
+      403:
+        description: Forbidden
+      500:
+        description: Server Error 
+  /{film-id}:
+    description: |
+      Manages the information of a specific Film.
+    uriParameters:
+      film-id:
+        description: "Unique film identifier"
+        type: string
+        example: "1234"
+
+    get:
+      description: |
+          Service for retrieving the information associated to a specific film.
+
+      responses:
+        200:
+          description: Ok
+          body:
+            application/json:
+              example: !include examples/films/film-id/get_200.json
+              type: object
+              properties:
+                data:
+                  type: film.film       
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Server Error     
+    /characters:
+      description: |
+        Manages the information of a Film cast.
+
+      get:
+        description: |
+          Service for retrieving the film characters.
+
+        responses:
+          200:
+            description: Ok
+            body:
+              application/json:
+                type: object
+                properties:
+                  data:
+                    type: characters.characters
+          204:
+            description: Not Content
+          400:
+            body:
+              application/json:
+                type: object
+                properties:
+                  message:
+                    type: error.error
+                    required: false
+            description: Bad Request
+          401:
+            description: Unauthorized
+          403:
+            description: Forbidden
+          404:
+            description: Not found
+          500:
+            description: Server Error    
+      /{character-id}:
+        description: |
+          Manages the information of a specific Character.
+        uriParameters:
+          film-id:
+            description: "Unique character identifier"
+            type: string
+            example: "1234"
+        get:
+          description: |
+              Service for retrieving the information associated to a specific character.
+
+          responses:
+            200:
+              description: Ok
+              body:
+                application/json:
+                  example: !include examples/films/film-id/characters/character-id/get_200.json
+                  type: object
+                  properties:
+                    data:
+                      type: character.character       
+            401:
+              description: Unauthorized
+            403:
+              description: Forbidden
+            404:
+              description: Not found
+            500:
+              description: Server Error     
+    /directors:
+      description: |
+        Manages the information of a Film directors.
+
+      get:
+        description: |
+          Service for retrieving the film directors.
+
+        responses:
+          200:
+            description: Ok
+            body:
+              application/json:
+                type: object
+                properties:
+                  data:
+                    type: directors.directors
+          204:
+            description: Not Content
+          400:
+            body:
+              application/json:
+                type: object
+                properties:
+                  message:
+                    type: error.error
+                    required: false
+            description: Bad Request
+          401:
+            description: Unauthorized
+          403:
+            description: Forbidden
+          404:
+            description: Not found
+          500:
+            description: Server Error
+    /actors:
+      description: |
+        Manages actors.
+
+      get:
+        description: |
+          Service for retrieving the actors.
+
+        responses:
+          200:
+            description: Ok
+            body:
+              application/json:
+                type: object
+                properties:
+                  data:
+                    type: actors.actors
+          204:
+            description: Not Content
+          400:
+            body:
+              application/json:
+                type: object
+                properties:
+                  message:
+                    type: error.error
+                    required: false
+            description: Bad Request
+          401:
+            description: Unauthorized
+          403:
+            description: Forbidden
+          404:
+            description: Not found
+          500:
+            description: Server Error
+    /images:
+      description: |
+        Manages the information of a specific Film Image.
+      
+      get:
+        description: |
+            Service for retrieving the film images.
+
+        queryParameters:
+          size:
+            description: Filters the image by size.
+            type: string
+            example: 1600x1200
+            required: false
+
+        responses:
+          200:
+            description: Ok
+            body:
+              application/json:
+                type: object
+                properties:
+                  data:
+                    type: image.image[]
+          204:
+            description: Not Content
+          400:
+            body:
+              application/json:
+                type: object
+                properties:
+                  message:
+                    type: error.error
+                    required: false
+            description: Bad Request
+          401:
+            description: Unauthorized
+          403:
+            description: Forbidden
+          404:
+            description: Not found
+          500:
+            description: Server Error
+      post:
+        description: |
+          Service for storing a file with the image.
+
+        body:
+            multipart/form-data:
+              type: object
+              properties:
+                file:
+                  description: rootPart.
+                  required: false
+                  type: file
+                metadata:
+                  description: attachmentPart
+                  required: true
+                  type: image.image
+        responses:
+          201:
+            headers:
+              Location:
+                displayName: location
+                description: This header must provide the URI to reach the created resource.
+                type: string
+                required: true
+                example: /images/ae92bea5-b213-41d5-8a65-fb09b50ef8e4
+            body:
+              application/json:
+                type: object
+                properties:
+                  data:
+                    type: image.image
+          400:
+            body:
+              application/json:
+                type: object
+                properties:
+                  message:
+                    type: error.error
+                    required: false
+            description: Bad Request
+          401:
+            description: Unauthorized
+          403:
+            description: Forbidden
+          404:
+            description: Not found
+          500:
+            description: Server Error

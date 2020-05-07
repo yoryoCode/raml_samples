@@ -1,0 +1,19 @@
+#%RAML 1.0 Library
+uses:
+  persons: persons.raml
+
+types:
+  actors:
+    type: persons.persons
+    items:
+      properties:
+        actorId:
+          type: string
+          required: false
+          description: |
+            Unique actor identifier.
+        actorIntro:
+          type: string
+          required: false
+          description: |
+            actor intro text.          
